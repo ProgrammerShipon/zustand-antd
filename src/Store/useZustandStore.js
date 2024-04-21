@@ -1,0 +1,64 @@
+// import create from zustand
+
+import { v4 as uuidv4 } from "uuid";
+import create from "zustand";
+import { devtools } from "zustand/middleware";
+
+// initial nots data
+const initialNotes = [
+  {
+    key: 1,
+    serial: 1,
+    name: "Shipon Hossen Raju",
+    email: "msshipon234@gmail.com",
+    location: "Pabna, Dhaka, BD",
+    note: "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.",
+  },
+  {
+    key: 2,
+    serial: 2,
+    name: "Jim Green",
+    email: 42,
+    location: "London No. 1 Lake Park",
+    note: "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.",
+  },
+  {
+    key: 3,
+    serial: 3,
+    name: "Joe Black",
+    email: 32,
+    location: "Sidney No. 1 Lake Park",
+    note: "My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.",
+  },
+];
+
+export const useZustandStore = create(
+  devtools((set) => ({
+    notes: [...initialNotes],
+
+    addNotes: (note) =>
+      set((state) => ({ notes: [...state?.notes, { ...note, id: uuidv4() }] })),
+
+    // addUser: (user) =>
+    //   set((state) => ({ users: [...state.users, { ...user, id: uuidv4() }] })),
+
+    // deleteUser: (id) =>
+    //   set((state) => ({ users: state.users.filter((user) => user.id !== id) })),
+
+    // updateUser: (id, user) =>
+    //   set((state) => ({
+    //     users: state.users.map((u) => (u.id === id ? { ...u, ...user } : u)),
+    //   })),
+
+    // addNote: (note) =>
+    //   set((state) => ({ notes: [...state.notes, { ...note, id: uuidv4() }] })),
+
+    // deleteNote: (id) =>
+    //   set((state) => ({ notes: state.notes.filter((note) => note.id !== id) })),
+
+    // updateNote: (id, note) =>
+    //   set((state) => ({
+    //     notes: state.notes.map((n) => (n.id === id ? { ...n, ...note } : n)),
+    //   })),
+  }))
+);

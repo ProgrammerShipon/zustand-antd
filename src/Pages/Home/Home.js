@@ -1,12 +1,14 @@
 import Container from "@/Components/Container";
+import UsersNotes from "@/Components/UsersNotes/UsersNotes";
 
 // Home page
 export default function Home() {
   return (
     <>
       <Container>
-        <h1 className="text-3xl font-bold underline"> Assalamualaikum </h1>
-        <p className="text-lg"> Welcome to my website </p>
+        <div>
+          <UsersNotes />
+        </div>
       </Container>
     </>
   );

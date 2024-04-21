@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom code */
+.userNotes table thead tr th,
+.userNotes table tbody tr td {
+  @apply !text-center;
+}
