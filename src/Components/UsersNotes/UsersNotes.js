@@ -1,7 +1,7 @@
 "use client";
 
 import { useZustandStore } from "@/Store/useZustandStore";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, Table } from "antd";
 
 // User data - serial, name, email, location, notes
@@ -29,7 +29,7 @@ export default function UsersNotes() {
   console.log("notes ", notes);
 
   return (
-    <div className="userNotes py-7">
+    <div className="userNotes py-7 relative">
       <Table
         columns={columns}
         expandable={{
@@ -40,6 +40,12 @@ export default function UsersNotes() {
         }}
         dataSource={notes}
       />
+
+      <div className="inline-block absolute bottom-10 left-0">
+        <Button type="primary" icon={<PlusOutlined />}>
+          Add New Notes
+        </Button>
+      </div>
     </div>
   );
 }
