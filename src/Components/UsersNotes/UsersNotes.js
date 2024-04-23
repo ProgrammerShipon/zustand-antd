@@ -4,7 +4,7 @@ import { useZustandStore } from "@/Store/useZustandStore";
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, Table } from "antd";
 
-// User data - serial, name, email, location, notes
+// columns options
 const columns = [
   { title: "Serial", dataIndex: "serial", key: "serial" },
   { title: "Name", dataIndex: "name", key: "name" },
